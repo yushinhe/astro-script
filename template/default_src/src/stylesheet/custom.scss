@@ -1,0 +1,122 @@
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    margin: 0;
+    padding: 0;
+}
+
+a.textlink{
+    transition: background-size .2s ease;
+    background-size: 0% 1px;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(#000000, #000000);
+    &:hover{
+        background-size: 100% 1px;
+    }
+}
+
+.clear{
+    clear:both;
+    display:block;
+    overflow:hidden;
+    visibility:
+    hidden;
+    width:0;
+    height:0;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+a {
+    color: rgba(#000, 0.7);
+
+    &:focus,
+    &:hover {
+        color: rgba(#000, 0.6);
+        text-decoration: none;
+    }
+}
+
+a:focus{
+    outline: none;
+}
+
+.font0{
+    font-size: 0;
+}
+
+.font-noto{
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.vmid {
+    height: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: $text-color;
+    font-size: 1.6rem;
+    font-family: $font-family-sans-serif;
+    font-weight: 400;
+    line-height: 100%;
+    background: #FFFFFF;
+    height: 100%;
+    margin: 0;
+    &.hidebar{
+        overflow: hidden;
+    }
+}
+
+p{
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 137%;
+}
+
+.cover-img{
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@for $colour from 1 through length($base-colors) {
+    .color-#{$colour}{
+        color: nth($base-colors, $colour) !important;
+    }
+
+    .theme-color-#{$colour} {
+        color: nth($base-colors, $colour);
+    }
+}
+
+#container{
+    min-height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#main{
+    overflow: unset;
+    flex-grow: 1;
+}
